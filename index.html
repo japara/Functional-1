@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <button id="price-low">Price: low to high</button>
+    <button id="price-high">Price: high to low</button>
+    <button id="A-Z">Name: A-Z</button>
+    <button id="Z-A">Name: Z-A</button>
+    <h1>Choose Price range:</h1>
+    <label for="Min-price">Min:</label>
+    <input type="number" name="Min-price" id="Min-price" value="0">
+    <label for="Max-price">Max:</label>
+    <input type="number" name="Max-price" id="Max-price" value="0">
+    <button id="Filter-btn">Filter</button>
 
+    <div id="price-box"></div>
 
     <script src="main.js"></script>
 </body>

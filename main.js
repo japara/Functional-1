@@ -223,3 +223,103 @@ let ragac={
 }
 
 console.log(ragac.getAnnualIncome());
+
+
+//////////////////////////////////////////////////
+/////////////////////////////////////////////////
+////Functional
+
+let products=[
+    ["Apple", 2.4],
+    ["Banana", 1.8], 
+    ["Cherry", 3],
+    ["Peach",1.2],
+    ["Watermelon", 0.7],
+    ["Melon", 1],
+    ["Plum", 3,2]
+]
+
+function dalageba(){
+    for(elem of products){
+    let box = document.createElement('div');
+    let cont=document.getElementById('price-box');
+    let text1 = document.createElement('p');
+    let text2 = document.createElement('p');
+    cont.appendChild(box);
+    box.appendChild(text1);
+    box.appendChild(text2)
+    box.classList.add('box');
+    text1.innerHTML=`Product Name: ${elem[0]}`; 
+    text2.innerHTML=`Product Price: ${elem[1]}`;
+    text2.style.marginLeft='40px';
+    }
+}
+dalageba();
+
+
+let low_btn=document.getElementById('price-low');
+let high_btn=document.getElementById('price-high');
+let A_Z_btn=document.getElementById('A-Z');
+let Z_A_btn=document.getElementById('Z-A');
+let filter_btn = document.getElementById('Filter-btn');
+
+low_btn.addEventListener('click', lower);
+high_btn.addEventListener('click', higher);
+A_Z_btn.addEventListener('click', alfa1);
+Z_A_btn.addEventListener('click', alfa2);
+filter_btn.addEventListener('click', filter);
+
+
+
+function lower(){
+    products.sort((a, b) => {
+          return a[1] - b[1];
+        });
+    document.getElementById('price-box').innerHTML='';
+    dalageba();
+}
+
+function higher(){
+    products.sort((a, b) => {
+          return b[1] - a[1];
+        });
+        document.getElementById('price-box').innerHTML='';
+        dalageba();
+}
+
+function alfa1(){
+    products.sort();
+        document.getElementById('price-box').innerHTML='';
+        dalageba();
+}
+
+function alfa2(){
+    products.sort();
+    products.reverse();
+    document.getElementById('price-box').innerHTML='';
+    dalageba();
+}
+
+let max_val= document.getElementById('Max-price').value;
+let min_val= document.getElementById('Min-price').value;
+
+function shemowmeba(num){
+    return num[1]>=min_val&& num[1]<=max_val;
+    // console.log(num[1]);
+}
+
+function filter(){
+    // for(elem of products){
+    //     if(elem[1]<min_val || elem[1]>max_val){
+    //         products.elem=[];
+    //     }
+    max_val= document.getElementById('Max-price').value;
+    min_val= document.getElementById('Min-price').value;
+    products=products.filter(shemowmeba);
+    document.getElementById('price-box').innerHTML='';
+    dalageba();
+}
+
+    
+    document.getElementById('price-box').innerHTML='';
+    dalageba();

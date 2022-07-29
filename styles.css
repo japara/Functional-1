@@ -1,0 +1,13 @@
+.box{
+    background-color: rgb(246, 194, 90);
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 350px;
+    height: 150px;
+    margin: 20px auto;
+}
